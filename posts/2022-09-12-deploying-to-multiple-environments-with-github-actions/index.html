@@ -214,16 +214,16 @@ Initially I configured the GitHub Action in a simple way."/>
 <p><em>Note: If you’d like to share a runner with multiple repos, create the runner on the Organization level instead.</em></p>
 <h2 id="configuring-the-runner-as-a-service">Configuring the runner as a service</h2>
 <p>The instructions that GitHub provides show you how to run the service directly in the terminal.<br>
-<img src="../../images/run_sh.png" alt="Script"><br>
+<img src="/run_sh.png" alt="Script"><br>
 You most likely won’t want to do this, however, since once you exit the terminal, the runner will stop. Instead, you’ll want to configure it as a background service, using these instructions. Note that all the commands in the instructions should be run within the actions-runner folder that you created when downloading the runner.</p>
 <h2 id="repeat-as-needed-for-each-target-environment">Repeat as needed for each target environment</h2>
 <p>Repeat the steps above for each environment/server you’d like to deploy to (dev, prod, etc.).</p>
 <h2 id="adding-tags-to-the-runners">Adding tags to the runners</h2>
 <p>Once the runners are created for all environments, go to your repo &gt; Settings &gt; Actions &gt; Runners. Click on each runner, and add a label with your environment name (i.e., development, production, etc.). This label will be used to match a push event to a specific environment.
-<img src="../../images/runner_tag.png" alt="Runner_tag"></p>
+<img src="/runner_tag.png" alt="Runner_tag"></p>
 <h2 id="create-the-yaml-file">Create the yaml file</h2>
 <p>Next, you’ll create a yaml file with instructions on when and how to deploy. Go to your repo page and click on the Actions tab at the top, then click on “Set up a workflow yourself.”</p>
-<p><img src="../../images/yaml_file.png" alt="Script"><br>
+<p><img src="/yaml_file.png" alt="Script"><br>
 You’ll then be dropped into the GitHub editor where you can create your yaml file. Here is the file I used to deploy to separate dev and production environments. Our app was built using Nuxt, so the run commands use Node and pm2. You’ll want to change this of course, based on your specific build steps and requirements.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>name: Deploy to server
 </span></span><span style="display:flex;"><span>
