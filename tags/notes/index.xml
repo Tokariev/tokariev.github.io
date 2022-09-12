@@ -6,7 +6,16 @@
     <description>Recent content in notes on MBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Sep 2022 10:51:45 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/tags/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Sep 2022 20:20:20 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/tags/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploying to Multiple Environments With GitHub Actions</title>
+      <link>https://tokariev.github.io/posts/2022-09-12-deploying-to-multiple-environments-with-github-actions/</link>
+      <pubDate>Mon, 12 Sep 2022 20:20:20 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/posts/2022-09-12-deploying-to-multiple-environments-with-github-actions/</guid>
+      <description>Its an articel about deploymen.</description>
+    </item>
+    
     <item>
       <title>Git</title>
       <link>https://tokariev.github.io/posts/2022-09-12-git/</link>

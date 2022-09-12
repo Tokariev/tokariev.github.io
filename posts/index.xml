@@ -6,7 +6,25 @@
     <description>Recent content in Posts on MBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Sep 2022 19:31:29 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Sep 2022 21:34:33 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Start pm2 With App Name</title>
+      <link>https://tokariev.github.io/posts/2022-09-12-start-pm2-with-app-name/</link>
+      <pubDate>Mon, 12 Sep 2022 21:34:33 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/posts/2022-09-12-start-pm2-with-app-name/</guid>
+      <description>pm2 start dist/main.js --name skimpel-api</description>
+    </item>
+    
+    <item>
+      <title>Deploying to Multiple Environments With GitHub Actions</title>
+      <link>https://tokariev.github.io/posts/2022-09-12-deploying-to-multiple-environments-with-github-actions/</link>
+      <pubDate>Mon, 12 Sep 2022 20:20:20 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/posts/2022-09-12-deploying-to-multiple-environments-with-github-actions/</guid>
+      <description>Its an articel about deploymen.</description>
+    </item>
+    
     <item>
       <title>Important things</title>
       <link>https://tokariev.github.io/posts/2022-09-12-important-things/</link>
