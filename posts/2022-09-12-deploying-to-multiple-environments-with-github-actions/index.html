@@ -16,7 +16,9 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Deploying to Multiple Environments With GitHub Actions" />
-<meta property="og:description" content="Its an articel about deploymen." />
+<meta property="og:description" content="Original articel about deploymen.
+Deploying to Multiple Environments with GitHub Actions Recently I used GitHub Actions to facilitate automated deployments for a new app. I was impressed overall with GitHub’s new CI offering. It was fairly simple to configure, and so far it hasn’t cost anything, even with a private repo. I also use a cool little Slack integration to notify the team of new deployments.
+Initially I configured the GitHub Action in a simple way." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tokariev.github.io/posts/2022-09-12-deploying-to-multiple-environments-with-github-actions/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-12T20:20:20+02:00" />
@@ -25,7 +27,9 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Deploying to Multiple Environments With GitHub Actions"/>
-<meta name="twitter:description" content="Its an articel about deploymen."/>
+<meta name="twitter:description" content="Original articel about deploymen.
+Deploying to Multiple Environments with GitHub Actions Recently I used GitHub Actions to facilitate automated deployments for a new app. I was impressed overall with GitHub’s new CI offering. It was fairly simple to configure, and so far it hasn’t cost anything, even with a private repo. I also use a cool little Slack integration to notify the team of new deployments.
+Initially I configured the GitHub Action in a simple way."/>
 
   
   
@@ -139,7 +143,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-12-deploying-to-multiple-environments-with-github-actions%2f&name=Deploying%20to%20Multiple%20Environments%20With%20GitHub%20Actions&description=Its%20an%20articel%20about%20deploymen." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-12-deploying-to-multiple-environments-with-github-actions%2f&name=Deploying%20to%20Multiple%20Environments%20With%20GitHub%20Actions&description=Original%20articel%20about%20deploymen.%0aDeploying%20to%20Multiple%20Environments%20with%20GitHub%20Actions%20Recently%20I%20used%20GitHub%20Actions%20to%20facilitate%20automated%20deployments%20for%20a%20new%20app.%20I%20was%20impressed%20overall%20with%20GitHub%e2%80%99s%20new%20CI%20offering.%20It%20was%20fairly%20simple%20to%20configure%2c%20and%20so%20far%20it%20hasn%e2%80%99t%20cost%20anything%2c%20even%20with%20a%20private%20repo.%20I%20also%20use%20a%20cool%20little%20Slack%20integration%20to%20notify%20the%20team%20of%20new%20deployments.%0aInitially%20I%20configured%20the%20GitHub%20Action%20in%20a%20simple%20way." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -153,7 +157,16 @@
     </div>
     
     <div id="toc">
-      <nav id="TableOfContents"></nav>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#installing-the-runner">Installing the runner</a></li>
+    <li><a href="#configuring-the-runner-as-a-service">Configuring the runner as a service</a></li>
+    <li><a href="#repeat-as-needed-for-each-target-environment">Repeat as needed for each target environment</a></li>
+    <li><a href="#adding-tags-to-the-runners">Adding tags to the runners</a></li>
+    <li><a href="#create-the-yaml-file">Create the yaml file</a></li>
+    <li><a href="#finishing-up">Finishing up</a></li>
+  </ul>
+</nav>
     </div>
     
   </span>
@@ -190,7 +203,92 @@
   
     
     <div class="content" itemprop="articleBody">
-      <p>Its an <a href="https://dylanwooters.wordpress.com/2021/10/08/deploying-to-multiple-environments-with-github-actions/">articel</a> about deploymen.</p>
+      <p>Original <a href="https://dylanwooters.wordpress.com/2021/10/08/deploying-to-multiple-environments-with-github-actions/">articel</a> about deploymen.</p>
+<h1 id="deploying-to-multiple-environments-with-github-actions">Deploying to Multiple Environments with GitHub Actions</h1>
+<p>Recently I used GitHub Actions to facilitate automated deployments for a new app. I was impressed overall with GitHub’s new CI offering. It was fairly simple to configure, and so far it hasn’t cost anything, even with a private repo. I also use a cool little Slack integration to notify the team of new deployments.</p>
+<p>Initially I configured the GitHub Action in a simple way. When the team pushed to master, it deployed to our dev environment. However, after the app went live, we needed a way to push to both the dev and production environments, using separate branches. To my surprise, there were no clear tutorials on the web for how to set this up. I eventually figured it out by combining information from multiple blog posts and a YouTube video.</p>
+<p>In this post, I’ll walk you through configuring GitHub Actions to deploy to multiple self-hosted environments. This way you can push to a dev or QA environment for testing and verification of changes, and then to a production environment once everything is working well.</p>
+<h2 id="installing-the-runner">Installing the runner</h2>
+<p>First you will want to create a “runner.” A runner is essentially a service that listens for push events in your repo. GitHub offers two types of runners: Github-hosted runners (which run on Github’s servers), and self-hosted runners. Since we used AWS to host our app, we used self-hosted runners.</p>
+<p>You can create a self-hosted runner in GitHub by going to your repo &gt; Settings &gt; Actions &gt; Runners. Click on the New Self-hosted Runner button and it will walk you through the process of downloading and configuring the runner on your target environment.</p>
+<p><em>Note: If you’d like to share a runner with multiple repos, create the runner on the Organization level instead.</em></p>
+<h2 id="configuring-the-runner-as-a-service">Configuring the runner as a service</h2>
+<p>The instructions that GitHub provides show you how to run the service directly in the terminal.<br>
+<img src="../../images/run_sh.png" alt="Script"><br>
+You most likely won’t want to do this, however, since once you exit the terminal, the runner will stop. Instead, you’ll want to configure it as a background service, using these instructions. Note that all the commands in the instructions should be run within the actions-runner folder that you created when downloading the runner.</p>
+<h2 id="repeat-as-needed-for-each-target-environment">Repeat as needed for each target environment</h2>
+<p>Repeat the steps above for each environment/server you’d like to deploy to (dev, prod, etc.).</p>
+<h2 id="adding-tags-to-the-runners">Adding tags to the runners</h2>
+<p>Once the runners are created for all environments, go to your repo &gt; Settings &gt; Actions &gt; Runners. Click on each runner, and add a label with your environment name (i.e., development, production, etc.). This label will be used to match a push event to a specific environment.
+<img src="../../images/runner_tag.png" alt="Runner_tag"></p>
+<h2 id="create-the-yaml-file">Create the yaml file</h2>
+<p>Next, you’ll create a yaml file with instructions on when and how to deploy. Go to your repo page and click on the Actions tab at the top, then click on “Set up a workflow yourself.”</p>
+<p><img src="../../images/yaml_file.png" alt="Script"><br>
+You’ll then be dropped into the GitHub editor where you can create your yaml file. Here is the file I used to deploy to separate dev and production environments. Our app was built using Nuxt, so the run commands use Node and pm2. You’ll want to change this of course, based on your specific build steps and requirements.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>name: Deploy to server
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>on:
+</span></span><span style="display:flex;"><span>  push:
+</span></span><span style="display:flex;"><span>    branches: <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;dev&#34;</span>, <span style="color:#e6db74">&#34;master&#34;</span> <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>  pull_request:
+</span></span><span style="display:flex;"><span>    branches: <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;master&#34;</span> <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>jobs:
+</span></span><span style="display:flex;"><span>  dev_deploy:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># The type of runner that the job will run on</span>
+</span></span><span style="display:flex;"><span>    runs-on: <span style="color:#f92672">[</span>self-hosted, development<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># look at the ref and only run this job if the branch that triggered the workflow is &#34;dev&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>: endswith<span style="color:#f92672">(</span>github.ref, <span style="color:#e6db74">&#39;dev&#39;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Steps represent a sequence of tasks that will be executed as part of the job</span>
+</span></span><span style="display:flex;"><span>    strategy:
+</span></span><span style="display:flex;"><span>      matrix:
+</span></span><span style="display:flex;"><span>        node-version: <span style="color:#f92672">[</span>14.x<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>       
+</span></span><span style="display:flex;"><span>    steps:
+</span></span><span style="display:flex;"><span>    - uses: actions/checkout@v3
+</span></span><span style="display:flex;"><span>    - name: Use Node.js <span style="color:#e6db74">${</span>{ matrix.node-version <span style="color:#e6db74">}</span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>      uses: actions/setup-node@v3
+</span></span><span style="display:flex;"><span>      with:
+</span></span><span style="display:flex;"><span>        node-version: <span style="color:#e6db74">${</span>{ matrix.node-version <span style="color:#e6db74">}</span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        cache: <span style="color:#e6db74">&#39;npm&#39;</span>
+</span></span><span style="display:flex;"><span>    - run: npm ci
+</span></span><span style="display:flex;"><span>    - run: cp ~/skimpel-api/production.env ~/skimpel-api/_work/skimpel-api/skimpel-api
+</span></span><span style="display:flex;"><span>    - run: npm run build:prod
+</span></span><span style="display:flex;"><span>    - run: pm2 restart skimpel-api
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  prod_deploy:
+</span></span><span style="display:flex;"><span>    runs-on: <span style="color:#f92672">[</span>self-hosted, production<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># look at the ref and only run this job if the branch that triggered the workflow is &#34;dev&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>: endswith<span style="color:#f92672">(</span>github.ref, <span style="color:#e6db74">&#39;master&#39;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Steps represent a sequence of tasks that will be executed as part of the job</span>
+</span></span><span style="display:flex;"><span>    strategy:
+</span></span><span style="display:flex;"><span>      matrix:
+</span></span><span style="display:flex;"><span>        node-version: <span style="color:#f92672">[</span>14.x<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>       
+</span></span><span style="display:flex;"><span>    steps:
+</span></span><span style="display:flex;"><span>    - uses: actions/checkout@v3
+</span></span><span style="display:flex;"><span>    - name: Use Node.js <span style="color:#e6db74">${</span>{ matrix.node-version <span style="color:#e6db74">}</span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>      uses: actions/setup-node@v3
+</span></span><span style="display:flex;"><span>      with:
+</span></span><span style="display:flex;"><span>        node-version: <span style="color:#e6db74">${</span>{ matrix.node-version <span style="color:#e6db74">}</span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        cache: <span style="color:#e6db74">&#39;npm&#39;</span>
+</span></span><span style="display:flex;"><span>    - run: npm ci
+</span></span><span style="display:flex;"><span>    - run: cp ~/skimpel-api/production.env ~/skimpel-api/_work/skimpel-api/skimpel-api
+</span></span><span style="display:flex;"><span>    - run: npm run build:prod
+</span></span><span style="display:flex;"><span>    - run: pm2 restart skimpel-api
+</span></span></code></pre></div><p>A few important things to note about the above yaml:</p>
+<ol>
+<li>The “on” section is watching for push events to two branches: dev and master</li>
+<li>There are two deploy jobs (dev_deploy and prod_deploy).</li>
+<li>The “runs-on” section use the runner label created above to target the correct runner and environment.</li>
+<li>The “if” section uses the endswith function to apply conditional logic for the job based on the branch name from github.ref.</li>
+<li>The final job, notify, used the Slack integration mentioned above, and is totally optional. Notice the needs section, which ensures that the notification is sent for a production deployment only.</li>
+</ol>
+<p>In a nutshell, the runs-on section targets the environment based on the runner label, and the if section ensures that only pushes to a specific branch get deployed to that environment. For example, a push to the dev branch will get deployed to the dev environment, via the runner with the “development” label.</p>
+<h2 id="finishing-up">Finishing up</h2>
+<p>Once the yaml file is ready, go ahead and commit it to master, and the GitHub Actions deployments will automatically start. You can view the deployments, including details on each run, in the Actions tab.</p>
+<p>Also, the specific folder that GitHub uses for deployments on the target server is actions-runner/_work. Use that folder for hosting your app, or to troubleshoot issues in the code.</p>
+<p>Let me know if you have any questions or problems using the comments below.</p>
 
     </div>
   </article>
@@ -214,7 +312,16 @@
 
     
     <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents"></nav>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#installing-the-runner">Installing the runner</a></li>
+    <li><a href="#configuring-the-runner-as-a-service">Configuring the runner as a service</a></li>
+    <li><a href="#repeat-as-needed-for-each-target-environment">Repeat as needed for each target environment</a></li>
+    <li><a href="#adding-tags-to-the-runners">Adding tags to the runners</a></li>
+    <li><a href="#create-the-yaml-file">Create the yaml file</a></li>
+    <li><a href="#finishing-up">Finishing up</a></li>
+  </ul>
+</nav>
     </div>
     
 
@@ -262,7 +369,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-12-deploying-to-multiple-environments-with-github-actions%2f&name=Deploying%20to%20Multiple%20Environments%20With%20GitHub%20Actions&description=Its%20an%20articel%20about%20deploymen." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-12-deploying-to-multiple-environments-with-github-actions%2f&name=Deploying%20to%20Multiple%20Environments%20With%20GitHub%20Actions&description=Original%20articel%20about%20deploymen.%0aDeploying%20to%20Multiple%20Environments%20with%20GitHub%20Actions%20Recently%20I%20used%20GitHub%20Actions%20to%20facilitate%20automated%20deployments%20for%20a%20new%20app.%20I%20was%20impressed%20overall%20with%20GitHub%e2%80%99s%20new%20CI%20offering.%20It%20was%20fairly%20simple%20to%20configure%2c%20and%20so%20far%20it%20hasn%e2%80%99t%20cost%20anything%2c%20even%20with%20a%20private%20repo.%20I%20also%20use%20a%20cool%20little%20Slack%20integration%20to%20notify%20the%20team%20of%20new%20deployments.%0aInitially%20I%20configured%20the%20GitHub%20Action%20in%20a%20simple%20way." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

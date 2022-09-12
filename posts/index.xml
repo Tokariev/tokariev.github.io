@@ -22,7 +22,9 @@
       <pubDate>Mon, 12 Sep 2022 20:20:20 +0200</pubDate>
       
       <guid>https://tokariev.github.io/posts/2022-09-12-deploying-to-multiple-environments-with-github-actions/</guid>
-      <description>Its an articel about deploymen.</description>
+      <description>Original articel about deploymen.
+Deploying to Multiple Environments with GitHub Actions Recently I used GitHub Actions to facilitate automated deployments for a new app. I was impressed overall with GitHub’s new CI offering. It was fairly simple to configure, and so far it hasn’t cost anything, even with a private repo. I also use a cool little Slack integration to notify the team of new deployments.
+Initially I configured the GitHub Action in a simple way.</description>
     </item>
     
     <item>
