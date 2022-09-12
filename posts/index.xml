@@ -6,14 +6,17 @@
     <description>Recent content in Posts on MBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Sep 2022 09:39:54 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Sep 2022 10:19:17 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My First Post</title>
-      <link>https://tokariev.github.io/posts/my-first-post/</link>
-      <pubDate>Mon, 12 Sep 2022 09:39:54 +0200</pubDate>
+      <title>Start</title>
+      <link>https://tokariev.github.io/posts/2022-09-12-start/</link>
+      <pubDate>Mon, 12 Sep 2022 10:19:17 +0200</pubDate>
       
-      <guid>https://tokariev.github.io/posts/my-first-post/</guid>
-      <description></description>
+      <guid>https://tokariev.github.io/posts/2022-09-12-start/</guid>
+      <description>Hello, my name is Mykola and this is my blog.
+I love my job as a programmer and I want to share with you my life and work in this blog.
+The blog was created on Hugo. Hugo allows to create a blog post in markdown language, what in my case brings a pleasure.
+Theme that was used is Cactus. The blog is deployed on GitHub pages. There is good video about deployment.</description>
     </item>
     
   </channel>
