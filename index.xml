@@ -6,7 +6,28 @@
     <description>Recent content on MBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Sep 2022 10:19:17 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Sep 2022 11:11:11 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS Multiple Environment</title>
+      <link>https://tokariev.github.io/posts/2022-09-12-aws-multiple-environment/</link>
+      <pubDate>Mon, 12 Sep 2022 11:11:11 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/posts/2022-09-12-aws-multiple-environment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://tokariev.github.io/posts/2022-09-12-git/</link>
+      <pubDate>Mon, 12 Sep 2022 10:51:45 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/posts/2022-09-12-git/</guid>
+      <description>Display branches before remove
+git remote -v Remove remote
+git remote remove origin #Add new remote
+git remote add origin git@github.com:BonaparteIT/skimpel-admin-panel.git Git submodule Changing Git submodule repository</description>
+    </item>
+    
     <item>
       <title>Start</title>
       <link>https://tokariev.github.io/posts/2022-09-12-start/</link>
