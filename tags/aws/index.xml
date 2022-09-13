@@ -6,7 +6,28 @@
     <description>Recent content in aws on MBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Sep 2022 11:11:11 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Sep 2022 21:49:16 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Upload Files to Aws S3</title>
+      <link>https://tokariev.github.io/posts/2022-09-13-upload-files-to-aws-s3/</link>
+      <pubDate>Tue, 13 Sep 2022 21:49:16 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/posts/2022-09-13-upload-files-to-aws-s3/</guid>
+      <description>Upload single file to S3 bucket aws s3 cp sample2.txt s3://test-s3-bucket/data/ Upload all files from a folder to S3 bucket recursively aws s3 cp tmp/ s3://test-s3-bucket/data/tmp/ --recursive </description>
+    </item>
+    
+    <item>
+      <title>AWS Cloud Front - access denied to S3 bucket</title>
+      <link>https://tokariev.github.io/posts/2022-09-13-aws-cloud-front/</link>
+      <pubDate>Tue, 13 Sep 2022 20:43:37 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/posts/2022-09-13-aws-cloud-front/</guid>
+      <description>Original explanation hier
+After creating cloud front distribution with mapping to my S3 bucket I got this access error:
+The reason was wrong auto coplete value in this section: What you should to to it&amp;rsquo;s go to the S3 bucket and grab the URL in the property tab on the down of the tab and put it in the origin domain input of the cloud front.
+Enjoy!</description>
+    </item>
+    
     <item>
       <title>AWS Multiple Environment</title>
       <link>https://tokariev.github.io/posts/2022-09-12-aws-multiple-environment/</link>

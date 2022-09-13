@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>S3 on MBlog</title>
+    <link>https://tokariev.github.io/tags/s3/</link>
+    <description>Recent content in S3 on MBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Sep 2022 21:49:16 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/tags/s3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Upload Files to Aws S3</title>
+      <link>https://tokariev.github.io/posts/2022-09-13-upload-files-to-aws-s3/</link>
+      <pubDate>Tue, 13 Sep 2022 21:49:16 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/posts/2022-09-13-upload-files-to-aws-s3/</guid>
+      <description>Upload single file to S3 bucket aws s3 cp sample2.txt s3://test-s3-bucket/data/ Upload all files from a folder to S3 bucket recursively aws s3 cp tmp/ s3://test-s3-bucket/data/tmp/ --recursive </description>
+    </item>
+    
+  </channel>
+</rss>
