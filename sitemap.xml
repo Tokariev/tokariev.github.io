@@ -2,19 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://tokariev.github.io/posts/2022-09-15-1-week-meal-paln-protein-based/</loc>
+    <lastmod>2022-09-14T23:44:34+02:00</lastmod>
+  </url><url>
+    <loc>https://tokariev.github.io/</loc>
+    <lastmod>2022-09-14T23:44:34+02:00</lastmod>
+  </url><url>
+    <loc>https://tokariev.github.io/tags/meal/</loc>
+    <lastmod>2022-09-14T23:44:34+02:00</lastmod>
+  </url><url>
+    <loc>https://tokariev.github.io/posts/</loc>
+    <lastmod>2022-09-14T23:44:34+02:00</lastmod>
+  </url><url>
+    <loc>https://tokariev.github.io/tags/</loc>
+    <lastmod>2022-09-14T23:44:34+02:00</lastmod>
+  </url><url>
+    <loc>https://tokariev.github.io/posts/2022-09-15-1-week-meal-paln/</loc>
+    <lastmod>2022-09-14T23:13:08+02:00</lastmod>
+  </url><url>
     <loc>https://tokariev.github.io/posts/2022-09-15-difference-between-run-and-cmd-in-dockerfile/</loc>
     <lastmod>2022-09-14T23:06:14+02:00</lastmod>
   </url><url>
     <loc>https://tokariev.github.io/tags/docker/</loc>
-    <lastmod>2022-09-14T23:06:14+02:00</lastmod>
-  </url><url>
-    <loc>https://tokariev.github.io/</loc>
-    <lastmod>2022-09-14T23:06:14+02:00</lastmod>
-  </url><url>
-    <loc>https://tokariev.github.io/posts/</loc>
-    <lastmod>2022-09-14T23:06:14+02:00</lastmod>
-  </url><url>
-    <loc>https://tokariev.github.io/tags/</loc>
     <lastmod>2022-09-14T23:06:14+02:00</lastmod>
   </url><url>
     <loc>https://tokariev.github.io/posts/2022-09-15-copying-files-from-docker-container-to-host/</loc>
