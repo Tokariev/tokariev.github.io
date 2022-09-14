@@ -5,6 +5,7 @@
     <link>https://tokariev.github.io/categories/</link>
     <description>Recent content in Categories on MBlog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://tokariev.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <copyright>Mykola Tokariev</copyright><atom:link href="https://tokariev.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

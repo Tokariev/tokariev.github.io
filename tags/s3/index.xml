@@ -6,6 +6,7 @@
     <description>Recent content in S3 on MBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Mykola Tokariev</copyright>
     <lastBuildDate>Tue, 13 Sep 2022 21:49:16 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/tags/s3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Upload Files to Aws S3</title>
@@ -13,7 +14,8 @@
       <pubDate>Tue, 13 Sep 2022 21:49:16 +0200</pubDate>
       
       <guid>https://tokariev.github.io/posts/2022-09-13-upload-files-to-aws-s3/</guid>
-      <description>Upload single file to S3 bucket aws s3 cp sample2.txt s3://test-s3-bucket/data/ Upload all files from a folder to S3 bucket recursively aws s3 cp tmp/ s3://test-s3-bucket/data/tmp/ --recursive </description>
+      <description>Upload single file to S3 bucket 1aws s3 cp sample2.txt s3://test-s3-bucket/data/ Upload all files from a folder to S3 bucket recursively 1aws s3 cp tmp/ s3://test-s3-bucket/data/tmp/ --recursive Using Sync Sync is a command used to synchronize source and target directories. Sync is by default recursive which means all the files and subdirectories in the source will be copied to target recursively.
+Use the below command to Sync your local directory to your S3 bucket.</description>
     </item>
     
   </channel>

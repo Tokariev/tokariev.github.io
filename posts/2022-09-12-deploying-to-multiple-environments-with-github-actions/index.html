@@ -11,7 +11,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Deploying to Multiple Environments With GitHub Actions | MBlog</title>
   <link rel = 'canonical' href = 'https://tokariev.github.io/posts/2022-09-12-deploying-to-multiple-environments-with-github-actions/'>
-  
+  <meta name="description" content="Blog to share oen expirirnce and thoughts.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
@@ -33,6 +33,8 @@ Initially I configured the GitHub Action in a simple way."/>
 
   
   
+    
+  
   
   <link rel="stylesheet" href="https://tokariev.github.io/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
 
@@ -50,6 +52,8 @@ Initially I configured the GitHub Action in a simple way."/>
 
   
   
+  
+  
 </head>
 
 <body class="max-width mx-auto px3 ltr">
@@ -62,6 +66,14 @@ Initially I configured the GitHub Action in a simple way."/>
   <span id="menu">
     <span id="nav">
       <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
         
       </ul>
     </span>
@@ -187,6 +199,12 @@ Initially I configured the GitHub Action in a simple way."/>
         </div>
         
         
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          5 minute read
+        </div>
+        
         
         
         <div class="article-tag">
@@ -225,57 +243,57 @@ You most likely won’t want to do this, however, since once you exit the termin
 <p>Next, you’ll create a yaml file with instructions on when and how to deploy. Go to your repo page and click on the Actions tab at the top, then click on “Set up a workflow yourself.”</p>
 <p><img src="/yaml_file.png" alt="Script"><br>
 You’ll then be dropped into the GitHub editor where you can create your yaml file. Here is the file I used to deploy to separate dev and production environments. Our app was built using Nuxt, so the run commands use Node and pm2. You’ll want to change this of course, based on your specific build steps and requirements.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>name: Deploy to server
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>on:
-</span></span><span style="display:flex;"><span>  push:
-</span></span><span style="display:flex;"><span>    branches: <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;dev&#34;</span>, <span style="color:#e6db74">&#34;master&#34;</span> <span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>  pull_request:
-</span></span><span style="display:flex;"><span>    branches: <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;master&#34;</span> <span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>jobs:
-</span></span><span style="display:flex;"><span>  dev_deploy:
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># The type of runner that the job will run on</span>
-</span></span><span style="display:flex;"><span>    runs-on: <span style="color:#f92672">[</span>self-hosted, development<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># look at the ref and only run this job if the branch that triggered the workflow is &#34;dev&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>: endswith<span style="color:#f92672">(</span>github.ref, <span style="color:#e6db74">&#39;dev&#39;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Steps represent a sequence of tasks that will be executed as part of the job</span>
-</span></span><span style="display:flex;"><span>    strategy:
-</span></span><span style="display:flex;"><span>      matrix:
-</span></span><span style="display:flex;"><span>        node-version: <span style="color:#f92672">[</span>14.x<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>       
-</span></span><span style="display:flex;"><span>    steps:
-</span></span><span style="display:flex;"><span>    - uses: actions/checkout@v3
-</span></span><span style="display:flex;"><span>    - name: Use Node.js <span style="color:#e6db74">${</span>{ matrix.node-version <span style="color:#e6db74">}</span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>      uses: actions/setup-node@v3
-</span></span><span style="display:flex;"><span>      with:
-</span></span><span style="display:flex;"><span>        node-version: <span style="color:#e6db74">${</span>{ matrix.node-version <span style="color:#e6db74">}</span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>        cache: <span style="color:#e6db74">&#39;npm&#39;</span>
-</span></span><span style="display:flex;"><span>    - run: npm ci
-</span></span><span style="display:flex;"><span>    - run: cp ~/skimpel-api/production.env ~/skimpel-api/_work/skimpel-api/skimpel-api
-</span></span><span style="display:flex;"><span>    - run: npm run build:prod
-</span></span><span style="display:flex;"><span>    - run: pm2 restart skimpel-api
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  prod_deploy:
-</span></span><span style="display:flex;"><span>    runs-on: <span style="color:#f92672">[</span>self-hosted, production<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># look at the ref and only run this job if the branch that triggered the workflow is &#34;dev&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>: endswith<span style="color:#f92672">(</span>github.ref, <span style="color:#e6db74">&#39;master&#39;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Steps represent a sequence of tasks that will be executed as part of the job</span>
-</span></span><span style="display:flex;"><span>    strategy:
-</span></span><span style="display:flex;"><span>      matrix:
-</span></span><span style="display:flex;"><span>        node-version: <span style="color:#f92672">[</span>14.x<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>       
-</span></span><span style="display:flex;"><span>    steps:
-</span></span><span style="display:flex;"><span>    - uses: actions/checkout@v3
-</span></span><span style="display:flex;"><span>    - name: Use Node.js <span style="color:#e6db74">${</span>{ matrix.node-version <span style="color:#e6db74">}</span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>      uses: actions/setup-node@v3
-</span></span><span style="display:flex;"><span>      with:
-</span></span><span style="display:flex;"><span>        node-version: <span style="color:#e6db74">${</span>{ matrix.node-version <span style="color:#e6db74">}</span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>        cache: <span style="color:#e6db74">&#39;npm&#39;</span>
-</span></span><span style="display:flex;"><span>    - run: npm ci
-</span></span><span style="display:flex;"><span>    - run: cp ~/skimpel-api/production.env ~/skimpel-api/_work/skimpel-api/skimpel-api
-</span></span><span style="display:flex;"><span>    - run: npm run build:prod
-</span></span><span style="display:flex;"><span>    - run: pm2 restart skimpel-api
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>name: Deploy to server
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>on:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>  push:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    branches: <span style="color:#ff79c6">[</span> <span style="color:#f1fa8c">&#34;dev&#34;</span>, <span style="color:#f1fa8c">&#34;master&#34;</span> <span style="color:#ff79c6">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>  pull_request:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    branches: <span style="color:#ff79c6">[</span> <span style="color:#f1fa8c">&#34;master&#34;</span> <span style="color:#ff79c6">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>jobs:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>  dev_deploy:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>    <span style="color:#6272a4"># The type of runner that the job will run on</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>    runs-on: <span style="color:#ff79c6">[</span>self-hosted, development<span style="color:#ff79c6">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>    <span style="color:#6272a4"># look at the ref and only run this job if the branch that triggered the workflow is &#34;dev&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>    <span style="color:#ff79c6">if</span>: endswith<span style="color:#ff79c6">(</span>github.ref, <span style="color:#f1fa8c">&#39;dev&#39;</span><span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>    <span style="color:#6272a4"># Steps represent a sequence of tasks that will be executed as part of the job</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>    strategy:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>      matrix:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>        node-version: <span style="color:#ff79c6">[</span>14.x<span style="color:#ff79c6">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>       
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>    steps:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>    - uses: actions/checkout@v3
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>    - name: Use Node.js <span style="color:#f1fa8c">${</span>{ matrix.node-version <span style="color:#f1fa8c">}</span><span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>      uses: actions/setup-node@v3
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>      with:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>        node-version: <span style="color:#f1fa8c">${</span>{ matrix.node-version <span style="color:#f1fa8c">}</span><span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>        cache: <span style="color:#f1fa8c">&#39;npm&#39;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>    - run: npm ci
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>    - run: cp ~/skimpel-api/production.env ~/skimpel-api/_work/skimpel-api/skimpel-api
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>    - run: npm run build:prod
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>    - run: pm2 restart skimpel-api
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>  prod_deploy:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>    runs-on: <span style="color:#ff79c6">[</span>self-hosted, production<span style="color:#ff79c6">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>    <span style="color:#6272a4"># look at the ref and only run this job if the branch that triggered the workflow is &#34;dev&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>    <span style="color:#ff79c6">if</span>: endswith<span style="color:#ff79c6">(</span>github.ref, <span style="color:#f1fa8c">&#39;master&#39;</span><span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>    <span style="color:#6272a4"># Steps represent a sequence of tasks that will be executed as part of the job</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span>    strategy:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span>      matrix:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span>        node-version: <span style="color:#ff79c6">[</span>14.x<span style="color:#ff79c6">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span>       
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span>    steps:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span><span>    - uses: actions/checkout@v3
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span><span>    - name: Use Node.js <span style="color:#f1fa8c">${</span>{ matrix.node-version <span style="color:#f1fa8c">}</span><span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span><span>      uses: actions/setup-node@v3
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span>      with:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span>        node-version: <span style="color:#f1fa8c">${</span>{ matrix.node-version <span style="color:#f1fa8c">}</span><span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span>        cache: <span style="color:#f1fa8c">&#39;npm&#39;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span><span>    - run: npm ci
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span><span>    - run: cp ~/skimpel-api/production.env ~/skimpel-api/_work/skimpel-api/skimpel-api
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span><span>    - run: npm run build:prod
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span><span>    - run: pm2 restart skimpel-api
 </span></span></code></pre></div><p>A few important things to note about the above yaml:</p>
 <ol>
 <li>The “on” section is watching for push events to two branches: dev and master</li>
@@ -306,6 +324,14 @@ You’ll then be dropped into the GitHub editor where you can create your yaml f
 
     <div id="nav-footer" style="display: none">
       <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Writings</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
         
       </ul>
     </div>
@@ -402,11 +428,19 @@ You’ll then be dropped into the GitHub editor where you can create your yaml f
 
   <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2022  MBlog 
+    Copyright  &copy; 2022  Mykola Tokariev 
   </div>
   <div class="footer-right">
     <nav>
       <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
         
       </ul>
     </nav>

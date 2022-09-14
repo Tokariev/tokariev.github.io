@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on MBlog</title>
+    <link>https://tokariev.github.io/tags/docker/</link>
+    <description>Recent content in docker on MBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mykola Tokariev</copyright>
+    <lastBuildDate>Wed, 14 Sep 2022 23:06:14 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Difference Between RUN and CMD in Dockerfile</title>
+      <link>https://tokariev.github.io/posts/2022-09-15-difference-between-run-and-cmd-in-dockerfile/</link>
+      <pubDate>Wed, 14 Sep 2022 23:06:14 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/posts/2022-09-15-difference-between-run-and-cmd-in-dockerfile/</guid>
+      <description>RUN - command triggers while we build the docker image.
+CMD - command triggers while we launch the created docker image.</description>
+    </item>
+    
+    <item>
+      <title>Copying Files From Docker Container to Host</title>
+      <link>https://tokariev.github.io/posts/2022-09-15-copying-files-from-docker-container-to-host/</link>
+      <pubDate>Wed, 14 Sep 2022 22:55:16 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/posts/2022-09-15-copying-files-from-docker-container-to-host/</guid>
+      <description>Option 1 In order to copy a file from a container to the host, you can use the command
+1docker cp &amp;lt;containerId&amp;gt;:/path/within/container /host/path/target </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>certificate on MBlog</title>
+    <link>https://tokariev.github.io/tags/certificate/</link>
+    <description>Recent content in certificate on MBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mykola Tokariev</copyright>
+    <lastBuildDate>Wed, 14 Sep 2022 12:59:42 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/tags/certificate/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CloudFront 403 Error</title>
+      <link>https://tokariev.github.io/posts/2022-09-15-cloudfront-403-error/</link>
+      <pubDate>Wed, 14 Sep 2022 12:59:42 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/posts/2022-09-15-cloudfront-403-error/</guid>
+      <description>After call URL http://dev.admin.skimpel.de/ I got the 403 error from AWS CloudFront. After add dev.admin.skimpel.de to alternate domain name section the problem was solved. </description>
+    </item>
+    
+    <item>
+      <title>Validate Aws Certificate on United Domain</title>
+      <link>https://tokariev.github.io/posts/2022-09-14-validate-aws-certificate-on-united-domain/</link>
+      <pubDate>Wed, 14 Sep 2022 00:32:51 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/posts/2022-09-14-validate-aws-certificate-on-united-domain/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

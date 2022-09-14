@@ -9,23 +9,25 @@
   <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Start pm2 With App Name | MBlog</title>
-  <link rel = 'canonical' href = 'https://tokariev.github.io/posts/2022-09-12-start-pm2-with-app-name/'>
+  <title> Copying Files From Docker Container to Host | MBlog</title>
+  <link rel = 'canonical' href = 'https://tokariev.github.io/posts/2022-09-15-copying-files-from-docker-container-to-host/'>
   <meta name="description" content="Blog to share oen expirirnce and thoughts.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="Start pm2 With App Name" />
-<meta property="og:description" content="pm2 start dist/main.js --name skimpel-api" />
+  <meta property="og:title" content="Copying Files From Docker Container to Host" />
+<meta property="og:description" content="Option 1 In order to copy a file from a container to the host, you can use the command
+1docker cp &lt;containerId&gt;:/path/within/container /host/path/target " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tokariev.github.io/posts/2022-09-12-start-pm2-with-app-name/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-09-12T21:34:33+02:00" />
-<meta property="article:modified_time" content="2022-09-12T21:34:33+02:00" />
+<meta property="og:url" content="https://tokariev.github.io/posts/2022-09-15-copying-files-from-docker-container-to-host/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-14T22:55:16+02:00" />
+<meta property="article:modified_time" content="2022-09-14T22:55:16+02:00" />
 
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Start pm2 With App Name"/>
-<meta name="twitter:description" content="pm2 start dist/main.js --name skimpel-api"/>
+<meta name="twitter:title" content="Copying Files From Docker Container to Host"/>
+<meta name="twitter:description" content="Option 1 In order to copy a file from a container to the host, you can use the command
+1docker cp &lt;containerId&gt;:/path/within/container /host/path/target "/>
 
   
   
@@ -78,14 +80,14 @@
       <ul>
         
         <li>
-          <a class="icon" href=" https://tokariev.github.io/posts/2022-09-12-deploying-to-multiple-environments-with-github-actions/" aria-label="Previous">
+          <a class="icon" href=" https://tokariev.github.io/posts/2022-09-15-cloudfront-403-error/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="https://tokariev.github.io/posts/2022-09-13-aws-cloud-front/" aria-label="Next">
+          <a class="icon" href="https://tokariev.github.io/posts/2022-09-15-difference-between-run-and-cmd-in-dockerfile/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -116,47 +118,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-12-start-pm2-with-app-name%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-15-copying-files-from-docker-container-to-host%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-12-start-pm2-with-app-name%2f&text=Start%20pm2%20With%20App%20Name" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-15-copying-files-from-docker-container-to-host%2f&text=Copying%20Files%20From%20Docker%20Container%20to%20Host" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-12-start-pm2-with-app-name%2f&title=Start%20pm2%20With%20App%20Name" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-15-copying-files-from-docker-container-to-host%2f&title=Copying%20Files%20From%20Docker%20Container%20to%20Host" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-12-start-pm2-with-app-name%2f&is_video=false&description=Start%20pm2%20With%20App%20Name" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-15-copying-files-from-docker-container-to-host%2f&is_video=false&description=Copying%20Files%20From%20Docker%20Container%20to%20Host" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Start%20pm2%20With%20App%20Name&body=Check out this article: https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-12-start-pm2-with-app-name%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Copying%20Files%20From%20Docker%20Container%20to%20Host&body=Check out this article: https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-15-copying-files-from-docker-container-to-host%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-12-start-pm2-with-app-name%2f&title=Start%20pm2%20With%20App%20Name" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-15-copying-files-from-docker-container-to-host%2f&title=Copying%20Files%20From%20Docker%20Container%20to%20Host" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-12-start-pm2-with-app-name%2f&title=Start%20pm2%20With%20App%20Name" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-15-copying-files-from-docker-container-to-host%2f&title=Copying%20Files%20From%20Docker%20Container%20to%20Host" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-12-start-pm2-with-app-name%2f&name=Start%20pm2%20With%20App%20Name&description=pm2%20start%20dist%2fmain.js%20--name%20skimpel-api" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-15-copying-files-from-docker-container-to-host%2f&name=Copying%20Files%20From%20Docker%20Container%20to%20Host&description=Option%201%20In%20order%20to%20copy%20a%20file%20from%20a%20container%20to%20the%20host%2c%20you%20can%20use%20the%20command%0a1docker%20cp%20%26lt%3bcontainerId%26gt%3b%3a%2fpath%2fwithin%2fcontainer%20%2fhost%2fpath%2ftarget%20" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-12-start-pm2-with-app-name%2f&t=Start%20pm2%20With%20App%20Name" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-15-copying-files-from-docker-container-to-host%2f&t=Copying%20Files%20From%20Docker%20Container%20to%20Host" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -165,7 +167,11 @@
     </div>
     
     <div id="toc">
-      <nav id="TableOfContents"></nav>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#option-1">Option 1</a></li>
+  </ul>
+</nav>
     </div>
     
   </span>
@@ -175,13 +181,13 @@
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        Start pm2 With App Name
+        Copying Files From Docker Container to Host
       </h1>
       <div class="meta">
         
         <div class="postdate">
           
-          <time datetime="2022-09-12 21:34:33 &#43;0200 CEST" itemprop="datePublished">2022-09-12</time>
+          <time datetime="2022-09-14 22:55:16 &#43;0200 CEST" itemprop="datePublished">2022-09-14</time>
           
         </div>
         
@@ -194,14 +200,24 @@
         
         
         
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/docker" rel="tag">docker</a>
+            
+        </div>
+        
       </div>
     </header>
 
   
     
     <div class="content" itemprop="articleBody">
-      <p><code>pm2 start dist/main.js --name skimpel-api</code></p>
-
+      <h2 id="option-1">Option 1</h2>
+<p>In order to copy a file from a container to the host, you can use the command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>docker cp &lt;containerId&gt;:/path/within/container /host/path/target
+</span></span></code></pre></div>
     </div>
   </article>
 
@@ -232,7 +248,11 @@
 
     
     <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents"></nav>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#option-1">Option 1</a></li>
+  </ul>
+</nav>
     </div>
     
 
@@ -245,47 +265,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-12-start-pm2-with-app-name%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-15-copying-files-from-docker-container-to-host%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-12-start-pm2-with-app-name%2f&text=Start%20pm2%20With%20App%20Name" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-15-copying-files-from-docker-container-to-host%2f&text=Copying%20Files%20From%20Docker%20Container%20to%20Host" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-12-start-pm2-with-app-name%2f&title=Start%20pm2%20With%20App%20Name" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-15-copying-files-from-docker-container-to-host%2f&title=Copying%20Files%20From%20Docker%20Container%20to%20Host" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-12-start-pm2-with-app-name%2f&is_video=false&description=Start%20pm2%20With%20App%20Name" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-15-copying-files-from-docker-container-to-host%2f&is_video=false&description=Copying%20Files%20From%20Docker%20Container%20to%20Host" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Start%20pm2%20With%20App%20Name&body=Check out this article: https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-12-start-pm2-with-app-name%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Copying%20Files%20From%20Docker%20Container%20to%20Host&body=Check out this article: https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-15-copying-files-from-docker-container-to-host%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-12-start-pm2-with-app-name%2f&title=Start%20pm2%20With%20App%20Name" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-15-copying-files-from-docker-container-to-host%2f&title=Copying%20Files%20From%20Docker%20Container%20to%20Host" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-12-start-pm2-with-app-name%2f&title=Start%20pm2%20With%20App%20Name" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-15-copying-files-from-docker-container-to-host%2f&title=Copying%20Files%20From%20Docker%20Container%20to%20Host" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-12-start-pm2-with-app-name%2f&name=Start%20pm2%20With%20App%20Name&description=pm2%20start%20dist%2fmain.js%20--name%20skimpel-api" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-15-copying-files-from-docker-container-to-host%2f&name=Copying%20Files%20From%20Docker%20Container%20to%20Host&description=Option%201%20In%20order%20to%20copy%20a%20file%20from%20a%20container%20to%20the%20host%2c%20you%20can%20use%20the%20command%0a1docker%20cp%20%26lt%3bcontainerId%26gt%3b%3a%2fpath%2fwithin%2fcontainer%20%2fhost%2fpath%2ftarget%20" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-12-start-pm2-with-app-name%2f&t=Start%20pm2%20With%20App%20Name" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2ftokariev.github.io%2fposts%2f2022-09-15-copying-files-from-docker-container-to-host%2f&t=Copying%20Files%20From%20Docker%20Container%20to%20Host" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

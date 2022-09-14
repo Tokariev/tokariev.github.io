@@ -6,6 +6,7 @@
     <description>Recent content in notes on MBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Mykola Tokariev</copyright>
     <lastBuildDate>Mon, 12 Sep 2022 20:20:20 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/tags/notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deploying to Multiple Environments With GitHub Actions</title>
@@ -25,9 +26,9 @@ Initially I configured the GitHub Action in a simple way.</description>
       
       <guid>https://tokariev.github.io/posts/2022-09-12-git/</guid>
       <description>Display branches before remove
-git remote -v Remove remote
-git remote remove origin #Add new remote
-git remote add origin git@github.com:BonaparteIT/skimpel-admin-panel.git Git submodule Changing Git submodule repository</description>
+1git remote -v Remove remote
+1git remote remove origin #Add new remote
+1git remote add origin git@github.com:BonaparteIT/skimpel-admin-panel.git Git submodule Changing Git submodule repository</description>
     </item>
     
     <item>

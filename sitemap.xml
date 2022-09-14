@@ -2,19 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tokariev.github.io/tags/aws/</loc>
-    <lastmod>2022-09-13T21:49:16+02:00</lastmod>
+    <loc>https://tokariev.github.io/posts/2022-09-15-difference-between-run-and-cmd-in-dockerfile/</loc>
+    <lastmod>2022-09-14T23:06:14+02:00</lastmod>
+  </url><url>
+    <loc>https://tokariev.github.io/tags/docker/</loc>
+    <lastmod>2022-09-14T23:06:14+02:00</lastmod>
   </url><url>
     <loc>https://tokariev.github.io/</loc>
-    <lastmod>2022-09-13T21:49:16+02:00</lastmod>
+    <lastmod>2022-09-14T23:06:14+02:00</lastmod>
   </url><url>
     <loc>https://tokariev.github.io/posts/</loc>
-    <lastmod>2022-09-13T21:49:16+02:00</lastmod>
-  </url><url>
-    <loc>https://tokariev.github.io/tags/s3/</loc>
-    <lastmod>2022-09-13T21:49:16+02:00</lastmod>
+    <lastmod>2022-09-14T23:06:14+02:00</lastmod>
   </url><url>
     <loc>https://tokariev.github.io/tags/</loc>
+    <lastmod>2022-09-14T23:06:14+02:00</lastmod>
+  </url><url>
+    <loc>https://tokariev.github.io/posts/2022-09-15-copying-files-from-docker-container-to-host/</loc>
+    <lastmod>2022-09-14T22:55:16+02:00</lastmod>
+  </url><url>
+    <loc>https://tokariev.github.io/tags/aws/</loc>
+    <lastmod>2022-09-14T12:59:42+02:00</lastmod>
+  </url><url>
+    <loc>https://tokariev.github.io/tags/certificate/</loc>
+    <lastmod>2022-09-14T12:59:42+02:00</lastmod>
+  </url><url>
+    <loc>https://tokariev.github.io/posts/2022-09-15-cloudfront-403-error/</loc>
+    <lastmod>2022-09-14T12:59:42+02:00</lastmod>
+  </url><url>
+    <loc>https://tokariev.github.io/posts/2022-09-14-vpn-service/</loc>
+    <lastmod>2022-09-14T01:38:04+02:00</lastmod>
+  </url><url>
+    <loc>https://tokariev.github.io/posts/2022-09-14-validate-aws-certificate-on-united-domain/</loc>
+    <lastmod>2022-09-14T00:32:51+02:00</lastmod>
+  </url><url>
+    <loc>https://tokariev.github.io/tags/s3/</loc>
     <lastmod>2022-09-13T21:49:16+02:00</lastmod>
   </url><url>
     <loc>https://tokariev.github.io/posts/2022-09-13-upload-files-to-aws-s3/</loc>
