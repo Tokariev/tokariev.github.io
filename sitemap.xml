@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tokariev.github.io/posts/2022-09-17-how-to-get-the-os-of-a-running-ec2-instance/</loc>
-    <lastmod>2022-09-17T11:52:44+02:00</lastmod>
-  </url><url>
     <loc>https://tokariev.github.io/tags/aws/</loc>
     <lastmod>2022-09-17T11:52:44+02:00</lastmod>
   </url><url>
     <loc>https://tokariev.github.io/tags/ec2/</loc>
+    <lastmod>2022-09-17T11:52:44+02:00</lastmod>
+  </url><url>
+    <loc>https://tokariev.github.io/posts/2022-09-17-how-to-get-the-os-of-a-running-ec2-instance/</loc>
     <lastmod>2022-09-17T11:52:44+02:00</lastmod>
   </url><url>
     <loc>https://tokariev.github.io/</loc>

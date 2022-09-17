@@ -9,7 +9,7 @@
     <copyright>Mykola Tokariev</copyright>
     <lastBuildDate>Sat, 17 Sep 2022 11:52:44 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>2022 09 17 How to Get the OS of a Running EC2 Instance</title>
+      <title>How to Get the OS of a Running EC2 Instance</title>
       <link>https://tokariev.github.io/posts/2022-09-17-how-to-get-the-os-of-a-running-ec2-instance/</link>
       <pubDate>Sat, 17 Sep 2022 11:52:44 +0200</pubDate>
       
@@ -28,7 +28,7 @@ Connect to Redis redis-cli -h cache-001.xxxxxx.0001.euc1.cache.amazonaws.com -c 
     </item>
     
     <item>
-      <title>2022 09 15 1 Week Meal Paln Protein Based</title>
+      <title>1 Week Meal Paln Protein Based</title>
       <link>https://tokariev.github.io/posts/2022-09-15-1-week-meal-paln-protein-based/</link>
       <pubDate>Wed, 14 Sep 2022 23:44:34 +0200</pubDate>
       
