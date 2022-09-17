@@ -14,7 +14,7 @@
       <pubDate>Sat, 17 Sep 2022 11:52:44 +0200</pubDate>
       
       <guid>https://tokariev.github.io/posts/2022-09-17-how-to-get-the-os-of-a-running-ec2-instance/</guid>
-      <description>Go to the EC2 console and the select the instance what you want to check. Then go to Select instance -&amp;gt; Action -&amp;gt; Instance setting -&amp;gt; Get instance screenshot In the screenshot you can find the current version of OS. </description>
+      <description>Go to the EC2 console and the select the instance what you want to check. Then go to Action -&amp;gt; Instance setting -&amp;gt; Get instance screenshot In the screenshot you can find the current version of OS. </description>
     </item>
     
     <item>
