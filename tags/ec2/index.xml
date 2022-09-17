@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EC2 on MBlog</title>
+    <link>https://tokariev.github.io/tags/ec2/</link>
+    <description>Recent content in EC2 on MBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mykola Tokariev</copyright>
+    <lastBuildDate>Sat, 17 Sep 2022 11:52:44 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/tags/ec2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2022 09 17 How to Get the OS of a Running EC2 Instance</title>
+      <link>https://tokariev.github.io/posts/2022-09-17-how-to-get-the-os-of-a-running-ec2-instance/</link>
+      <pubDate>Sat, 17 Sep 2022 11:52:44 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/posts/2022-09-17-how-to-get-the-os-of-a-running-ec2-instance/</guid>
+      <description>Go to the EC2 console and the select the instance what you want to check. Then go to Select instance -&amp;gt; Action -&amp;gt; Instance setting -&amp;gt; Get instance screenshot In the screenshot you can find the current version of OS. </description>
+    </item>
+    
+    <item>
+      <title>Connect Redis on EC2 Instance</title>
+      <link>https://tokariev.github.io/posts/2022-09-15-connect-redis-on-ec2-instance/</link>
+      <pubDate>Thu, 15 Sep 2022 21:05:17 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/posts/2022-09-15-connect-redis-on-ec2-instance/</guid>
+      <description>Installl Redis CLI on EC2 sudo apt-get install redis
+Connect to Redis redis-cli -h cache-001.xxxxxx.0001.euc1.cache.amazonaws.com -c -p 6379</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mykola Tokariev</copyright>
-    <lastBuildDate>Wed, 14 Sep 2022 23:44:34 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Sep 2022 11:52:44 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>aws</title>
+      <link>https://tokariev.github.io/tags/aws/</link>
+      <pubDate>Sat, 17 Sep 2022 11:52:44 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EC2</title>
+      <link>https://tokariev.github.io/tags/ec2/</link>
+      <pubDate>Sat, 17 Sep 2022 11:52:44 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/tags/ec2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Redis</title>
+      <link>https://tokariev.github.io/tags/redis/</link>
+      <pubDate>Thu, 15 Sep 2022 21:05:17 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/tags/redis/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>meal</title>
       <link>https://tokariev.github.io/tags/meal/</link>
@@ -23,15 +50,6 @@
       <pubDate>Wed, 14 Sep 2022 23:06:14 +0200</pubDate>
       
       <guid>https://tokariev.github.io/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>aws</title>
-      <link>https://tokariev.github.io/tags/aws/</link>
-      <pubDate>Wed, 14 Sep 2022 12:59:42 +0200</pubDate>
-      
-      <guid>https://tokariev.github.io/tags/aws/</guid>
       <description></description>
     </item>
     
