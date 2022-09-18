@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="125px" preserveAspectRatio="none" style="width:829px;height:125px;background:#FFFFFF;" version="1.1" viewBox="0 0 829 125" width="829px" zoomAndPan="magnify"><defs/><g><!--MD5=[1b7a85e673bafd7b87d95c7609f580d2]
+cluster EC2--><g id="cluster_EC2"><path d="M167,6 L195,6 A3.75,3.75 0 0 1 197.5,8.5 L204.5,28.4883 L820,28.4883 A2.5,2.5 0 0 1 822.5,30.9883 L822.5,115.5 A2.5,2.5 0 0 1 820,118 L167,118 A2.5,2.5 0 0 1 164.5,115.5 L164.5,8.5 A2.5,2.5 0 0 1 167,6 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="164.5" x2="204.5" y1="28.4883" y2="28.4883"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="27" x="168.5" y="21.5352">EC2</text></g><g id="elem_NGNIX"><rect fill="#F1F1F1" height="61.4648" style="stroke:#181818;stroke-width:0.5;" width="265" x="425" y="41"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43" x="536" y="56.5352">NGNIX</text><line style="stroke:#181818;stroke-width:0.5;" x1="426" x2="689" y1="61.4883" y2="61.4883"/><ellipse cx="436" cy="75.2324" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="445" y="79.0234">Forward requests</text><ellipse cx="436" cy="91.7207" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="239" x="445" y="95.5117">Provide Let’s Encrypt SSL certificate</text></g><g id="elem_NestJS"><rect fill="#F1F1F1" height="44.9766" style="stroke:#181818;stroke-width:0.5;" width="81" x="725" y="49"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="744.5" y="64.5352">NestJS</text><line style="stroke:#181818;stroke-width:0.5;" x1="726" x2="805" y1="69.4883" y2="69.4883"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69" x="731" y="87.0234">port:3000</text></g><g id="elem_CloudFront"><rect fill="#F1F1F1" height="61.4648" style="stroke:#181818;stroke-width:0.5;" width="209" x="181" y="41"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="246.5" y="56.5352">CloudFront</text><line style="stroke:#181818;stroke-width:0.5;" x1="182" x2="389" y1="61.4883" y2="61.4883"/><ellipse cx="192" cy="75.2324" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162" x="201" y="79.0234">Redirect HTTP to HTTPS</text><ellipse cx="192" cy="91.7207" fill="#000000" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="183" x="201" y="95.5117">Provide AWS SSL certificate</text></g><g id="elem_WebBrowser"><rect fill="#F1F1F1" height="44.9766" style="stroke:#181818;stroke-width:0.5;" width="139" x="7" y="49"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="34.5" y="64.5352">WebBrowser</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="145" y1="69.4883" y2="69.4883"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127" x="13" y="87.0234">dev.api.skimpel.de</text></g><!--MD5=[2f6e15be906910b42742e1bf4d1d84d2]
+link WebBrowser to CloudFront--><g id="link_WebBrowser_CloudFront"><path codeLine="24" d="M146.3,71.5 C156.1,71.5 165.9,71.5 175.71,71.5 " fill="none" id="WebBrowser-to-CloudFront" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="180.83,71.5,171.83,67.5,175.83,71.5,171.83,75.5,180.83,71.5" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[8cb51ddec85a94f5b5fa751b1dc4271b]
+link CloudFront to NGNIX--><g id="link_CloudFront_NGNIX"><path codeLine="25" d="M390.16,71.5 C399.99,71.5 409.82,71.5 419.66,71.5 " fill="none" id="CloudFront-to-NGNIX" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="424.8,71.5,415.8,67.5,419.8,71.5,415.8,75.5,424.8,71.5" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[9117558525a02bb4c4d46998e727db1d]
+link NGNIX to NestJS--><g id="link_NGNIX_NestJS"><path codeLine="26" d="M690.34,71.5 C700.18,71.5 710.01,71.5 719.84,71.5 " fill="none" id="NGNIX-to-NestJS" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="724.99,71.5,715.99,67.5,719.99,71.5,715.99,75.5,724.99,71.5" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[f2f73acb2251ad2f9b2a1279ac23211a]
+@startuml SSL
+
+package EC2{
+    object NGNIX
+    object NestJS
+    object CloudFront
+}
+
+
+object WebBrowser{
+
+}
+
+
+WebBrowser : dev.api.skimpel.de
+CloudFront : * Redirect HTTP to HTTPS 
+CloudFront : * Provide AWS SSL certificate 
+
+NGNIX : * Forward requests
+NGNIX : * Provide Let’s Encrypt SSL certificate
+
+NestJS : port:3000
+
+WebBrowser -> CloudFront 
+CloudFront -> NGNIX 
+NGNIX -> NestJS 
+
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 19:01:30 CEST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>

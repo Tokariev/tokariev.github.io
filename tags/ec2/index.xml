@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mykola Tokariev</copyright>
-    <lastBuildDate>Sat, 17 Sep 2022 11:52:44 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/tags/ec2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Sep 2022 12:10:30 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/tags/ec2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to add SSL certificate to EC2 Instance</title>
+      <link>https://tokariev.github.io/posts/2022-09-17-how-to-add-ssl-certificate-to-ec2-instance/</link>
+      <pubDate>Sat, 17 Sep 2022 12:10:30 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/posts/2022-09-17-how-to-add-ssl-certificate-to-ec2-instance/</guid>
+      <description>This is what we want to achive. NestJS app lives on AWS EC2 Instance and listening on port 3000. Wenn the browser sends a HTTP request we want automaticaly forwarding to port 3000. Also we want to use secure connection (HTTPS or SSL)
+0. In this tutorial we will: Install NGNIX 1 on EC2 Instanse Change configuration of the NGNIX to forward all requests from port 80 to NestJS app on port 3000 Install Cerbot 2 Configure Cerbot Get a Let’s Encrypt 3 certificate Enjoying website with SSL 1.</description>
+    </item>
+    
     <item>
       <title>How to Get the OS of a Running EC2 Instance</title>
       <link>https://tokariev.github.io/posts/2022-09-17-how-to-get-the-os-of-a-running-ec2-instance/</link>

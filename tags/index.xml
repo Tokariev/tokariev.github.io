@@ -7,20 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mykola Tokariev</copyright>
-    <lastBuildDate>Sat, 17 Sep 2022 11:52:44 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Sep 2022 12:10:30 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>aws</title>
       <link>https://tokariev.github.io/tags/aws/</link>
-      <pubDate>Sat, 17 Sep 2022 11:52:44 +0200</pubDate>
+      <pubDate>Sat, 17 Sep 2022 12:10:30 +0200</pubDate>
       
       <guid>https://tokariev.github.io/tags/aws/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>certificate</title>
+      <link>https://tokariev.github.io/tags/certificate/</link>
+      <pubDate>Sat, 17 Sep 2022 12:10:30 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/tags/certificate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>EC2</title>
       <link>https://tokariev.github.io/tags/ec2/</link>
-      <pubDate>Sat, 17 Sep 2022 11:52:44 +0200</pubDate>
+      <pubDate>Sat, 17 Sep 2022 12:10:30 +0200</pubDate>
       
       <guid>https://tokariev.github.io/tags/ec2/</guid>
       <description></description>
@@ -50,15 +59,6 @@
       <pubDate>Wed, 14 Sep 2022 23:06:14 +0200</pubDate>
       
       <guid>https://tokariev.github.io/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>certificate</title>
-      <link>https://tokariev.github.io/tags/certificate/</link>
-      <pubDate>Wed, 14 Sep 2022 12:59:42 +0200</pubDate>
-      
-      <guid>https://tokariev.github.io/tags/certificate/</guid>
       <description></description>
     </item>
     
