@@ -251,7 +251,9 @@ Also we want to use secure connection (HTTPS or SSL)</p>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>                proxy_set_header Host $host;
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>                proxy_cache_bypass $http_upgrade;
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        }
-</span></span></code></pre></div><p>Save file and restart NGNIX</p>
+</span></span></code></pre></div><p><strong>Important!</strong> Don&rsquo;t forget to add ports 443 and 3000 in your EC2 security group -&gt; inbound rules
+<img src="/static/inbound_rules.png" alt="Inbound rules"></p>
+<p>Save file and restart NGNIX</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>sudo service nginx restart
 </span></span></code></pre></div><h2 id="2-step">2. Step</h2>
 <p>Install Cerbot. <a href="https://snapcraft.io/docs/installing-snapd">Here</a> is very nice site with instructions.</p>
