@@ -217,7 +217,7 @@
     
     <div class="content" itemprop="articleBody">
       <p>This is what we want to achive.
-<img src="/static/HTTPS.svg" alt="HTTPS">
+<img src="/HTTPS.svg" alt="HTTPS">
 NestJS app lives on AWS EC2 Instance and listening on port 3000.
 Wenn the browser sends a HTTP request we want automaticaly forwarding to port 3000.
 Also we want to use secure connection (HTTPS or SSL)</p>
@@ -252,7 +252,7 @@ Also we want to use secure connection (HTTPS or SSL)</p>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>                proxy_cache_bypass $http_upgrade;
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        }
 </span></span></code></pre></div><p><strong>Important!</strong> Don&rsquo;t forget to add ports 443 and 3000 in your EC2 security group -&gt; inbound rules
-<img src="/static/inbound_rules.png" alt="Inbound rules"></p>
+<img src="/inbound_rules.png" alt="Inbound rules"></p>
 <p>Save file and restart NGNIX</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>sudo service nginx restart
 </span></span></code></pre></div><h2 id="2-step">2. Step</h2>
@@ -292,7 +292,7 @@ Congratulations! You have successfully enabled HTTPS on <a href="https://dev.api
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#6272a4">#You will not need to run Certbot again, unless you change your configuration. You can test automatic renewal for your certificates by running this command:</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>sudo certbot renew --dry-run
 </span></span></code></pre></div><h2 id="3-step-">3. Step 😁</h2>
-<p><img src="/static/api_with_ssl.png" alt="Api with SSL"></p>
+<p><img src="/api_with_ssl.png" alt="Api with SSL"></p>
 <p>If you need more info about EC2 configuration please contact me at <a href="mailto:bonaparteit@gmail.com">bonaparteit@gmail.com</a></p>
 <p>Usefull links:
 <a href="https://dev.to/shadid12/how-to-deploy-your-node-js-app-on-aws-with-nginx-and-ssl-3p5l">How To Deploy Your Node.js App On AWS With NGINX And SSL</a></p>
