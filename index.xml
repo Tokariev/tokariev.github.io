@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mykola Tokariev</copyright>
-    <lastBuildDate>Sun, 23 Oct 2022 20:07:49 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Oct 2022 20:37:53 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2022 10 23 How to Check if UserAgent Is a Mobile Device</title>
+      <link>https://tokariev.github.io/posts/2022-10-23-how-to-check-if-useragent-is-a-mobile-device/</link>
+      <pubDate>Sun, 23 Oct 2022 20:37:53 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/posts/2022-10-23-how-to-check-if-useragent-is-a-mobile-device/</guid>
+      <description>userAgent is a string value which will be set to any one of the following device names if they are using a mobile device:
+Android, BlackBerry, iPhone, iPad, iPod, Opera Mini, IEMobile, or WPDesktop.
+1export default function useDeviceDetect() { 2 const [isMobile, setMobile] = React.useState(false); 3 4 React.useEffect(() =&amp;gt; { 5 const userAgent = 6 typeof window.navigator === &amp;#34;undefined&amp;#34; ? &amp;#34;&amp;#34; : navigator.userAgent; 7 const mobile = Boolean( 8 userAgent.match( 9 /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i 10 ) 11 ); 12 setMobile(mobile); 13 }, []); 14} </description>
+    </item>
+    
     <item>
       <title>React Custom Hook</title>
       <link>https://tokariev.github.io/posts/2022-10-23-react-custom-hook/</link>
