@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mykola Tokariev</copyright>
-    <lastBuildDate>Sun, 23 Oct 2022 17:12:45 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Oct 2022 20:07:49 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React Custom Hook</title>
+      <link>https://tokariev.github.io/posts/2022-10-23-react-custom-hook/</link>
+      <pubDate>Sun, 23 Oct 2022 20:07:49 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/posts/2022-10-23-react-custom-hook/</guid>
+      <description>Custom react hook to call an API 1import { useState, useEffect } from &amp;#39;react&amp;#39;; 2import axios from &amp;#39;axios&amp;#39;; 3 4const API_KEY = process.env.REACT_APP_API_KEY; 5const url = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}`; 6 7const useGif = (tag) =&amp;gt; { 8 const [gif, setGif] = useState(&amp;#39;&amp;#39;); 9 10 const fetchGif = async (tag) =&amp;gt; { 11 const { data } = await axios.get(tag ? `${url}&amp;amp;tag=${tag}` : url); 12 13 const imageSrc = data.data.images.downsized_large.url; 14 15 setGif(imageSrc); 16 } 17 18 useEffect(() =&amp;gt; { 19 fetchGif(tag); 20 }, [tag]); 21 22 return { gif, fetchGif } 23} 24 25export default useGif; Usage Call custom react hook 1 2import React from &amp;#39;react&amp;#39;; 3 4import useGif from &amp;#39;.</description>
+    </item>
+    
     <item>
       <title>Firebase and Secret Key</title>
       <link>https://tokariev.github.io/posts/2022-10-23-firebase-and-secret-key/</link>
