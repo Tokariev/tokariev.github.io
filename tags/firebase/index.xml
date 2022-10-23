@@ -15,7 +15,7 @@
       
       <guid>https://tokariev.github.io/posts/2022-10-23-firebase-and-secret-key/</guid>
       <description>Firebase allows to use a secret key values. To add some secret use
-Add secret to firebase config 1firebase functions:config:set sercvice.token=&amp;#34;xxxxxx&amp;#34; Display secret 1firebase functions:config:get Use secret on the server 1const functions = require(&amp;#34;firebase-functions&amp;#34;); 2const express = require(&amp;#34;express&amp;#34;); 3const cors = require(&amp;#34;cors&amp;#34;); 4const axios = require(&amp;#34;axios&amp;#34;); 5 6const app = express(); 7 8app.use(cors({ origin: true })); 9app.use(express.json()); 10 11app.get(&amp;#34;/payment_url&amp;#34;, (req, res) =&amp;gt; { 12 axios 13 .post( 14 &amp;#34;https://some_url.com&amp;#34;, 15 .</description>
+Add secret to firebase config 1firebase functions:config:set sercvice.token=&amp;#34;xxxxxx&amp;#34; Display secret 1firebase functions:config:get Use secret on the server 1const functions = require(&amp;#34;firebase-functions&amp;#34;); 2const express = require(&amp;#34;express&amp;#34;); 3const axios = require(&amp;#34;axios&amp;#34;); 4 5const app = express(); 6 7app.use(express.json()); 8 9app.get(&amp;#34;/payment_url&amp;#34;, (req, res) =&amp;gt; { 10 axios 11 .post( 12 &amp;#34;https://some_url.com&amp;#34;, 13 ... 14 { 15 headers: { 16 &amp;#34;X-Token&amp;#34;: functions.</description>
     </item>
     
   </channel>
