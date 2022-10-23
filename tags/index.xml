@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mykola Tokariev</copyright>
-    <lastBuildDate>Sat, 17 Sep 2022 12:10:30 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Oct 2022 17:12:45 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>firebase</title>
+      <link>https://tokariev.github.io/tags/firebase/</link>
+      <pubDate>Sun, 23 Oct 2022 17:12:45 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/tags/firebase/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>aws</title>
       <link>https://tokariev.github.io/tags/aws/</link>
