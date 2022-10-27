@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mykola Tokariev</copyright>
-    <lastBuildDate>Sun, 23 Oct 2022 20:37:53 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Oct 2022 21:06:24 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Deploy Hugo Blog</title>
+      <link>https://tokariev.github.io/posts/2022-10-27-how-to-deploy-hugo-blog/</link>
+      <pubDate>Thu, 27 Oct 2022 21:06:24 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/posts/2022-10-27-how-to-deploy-hugo-blog/</guid>
+      <description>hugo new posts/2022-10-27-How-to-deploy-hugo-blog.md content/posts - Where you write and edit your posts&amp;hellip;
+hugo -D Generate website with posts in the public folder. This is the folder that you need to deploy.
+|hugo_project |&amp;ndash;content/posts |&amp;hellip; |&amp;ndash;public |&amp;hellip;</description>
+    </item>
+    
     <item>
       <title>How to Check if UserAgent Is a Mobile Device</title>
       <link>https://tokariev.github.io/posts/2022-10-23-how-to-check-if-useragent-is-a-mobile-device/</link>
