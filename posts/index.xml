@@ -14,9 +14,10 @@
       <pubDate>Thu, 27 Oct 2022 21:06:24 +0200</pubDate>
       
       <guid>https://tokariev.github.io/posts/2022-10-27-how-to-deploy-hugo-blog/</guid>
-      <description>hugo new posts/2022-10-27-How-to-deploy-hugo-blog.md content/posts - Where you write and edit your posts&amp;hellip;
-hugo -D Generate website with posts in the public folder. This is the folder that you need to deploy.
-|hugo_project |&amp;ndash;content/posts |&amp;hellip; |&amp;ndash;public |&amp;hellip;</description>
+      <description>hugo new posts/2022-10-27-How-to-deploy-hugo-blog.md
+content/posts - Where you write and edit your posts&amp;hellip;
+hugo -D
+Generate website with posts in the public folder. This is the folder that you need to deploy.</description>
     </item>
     
     <item>
