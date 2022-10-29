@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mykola Tokariev</copyright>
-    <lastBuildDate>Thu, 27 Oct 2022 21:06:24 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Oct 2022 23:45:00 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploy React App With Github Actions</title>
+      <link>https://tokariev.github.io/posts/2022-10-29-deploy-react-app-with-github-actions/</link>
+      <pubDate>Sat, 29 Oct 2022 23:45:00 +0200</pubDate>
+      
+      <guid>https://tokariev.github.io/posts/2022-10-29-deploy-react-app-with-github-actions/</guid>
+      <description>Firebase.js need to be included in the git repo Add FIREBASE_TOKEN to GitHub firebase login:ci 1name: Firebase Continuous Deployment 2 3on: 4 push: 5 branches: [main] 6 7jobs: 8 deploy: 9 runs-on: ubuntu-latest 10 steps: 11 - uses: actions/checkout@v3 12 - uses: actions/setup-node@v3 13 with: 14 node-version: 16 15 - run: npm ci 16 - run: npm run build 17 env: 18 CI: false # =&amp;gt; go through on warning 19 - uses: w9jds/firebase-action@master 20 with: 21 args: deploy --only hosting 22 env: 23 FIREBASE_TOKEN: ${{ secrets.</description>
+    </item>
+    
     <item>
       <title>How to Deploy Hugo Blog</title>
       <link>https://tokariev.github.io/posts/2022-10-27-how-to-deploy-hugo-blog/</link>
