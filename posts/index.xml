@@ -7,14 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Mykola Tokariev</copyright>
-    <lastBuildDate>Sat, 29 Oct 2022 23:45:00 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Jun 2023 09:15:49 +0200</lastBuildDate><atom:link href="https://tokariev.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Deploy React App With Github Actions</title>
-      <link>https://tokariev.github.io/posts/2022-10-29-deploy-react-app-with-github-actions/</link>
-      <pubDate>Sat, 29 Oct 2022 23:45:00 +0200</pubDate>
+      <title>Bash Script to Init Ubuntu Server</title>
+      <link>https://tokariev.github.io/posts/2023-06-21-bash-script-to-init-ubuntu-server/</link>
+      <pubDate>Wed, 21 Jun 2023 09:15:49 +0200</pubDate>
       
-      <guid>https://tokariev.github.io/posts/2022-10-29-deploy-react-app-with-github-actions/</guid>
-      <description>Firebase.js need to be included in the git repo Add FIREBASE_TOKEN to GitHub firebase login:ci 1name: Firebase Continuous Deployment 2 3on: 4 push: 5 branches: [main] 6 7jobs: 8 deploy: 9 runs-on: ubuntu-latest 10 steps: 11 - uses: actions/checkout@v3 12 - uses: actions/setup-node@v3 13 with: 14 node-version: 16 15 - run: npm ci 16 - run: npm run build 17 env: 18 CI: false # =&amp;gt; go through on warning 19 - uses: w9jds/firebase-action@master 20 with: 21 args: deploy --only hosting 22 env: 23 FIREBASE_TOKEN: ${{ secrets.</description>
+      <guid>https://tokariev.github.io/posts/2023-06-21-bash-script-to-init-ubuntu-server/</guid>
+      <description>1 2echo &amp;#39;Update repositories...&amp;#39; 3sudo apt update 4sudo apt upgrade 5 6echo &amp;#39;Install curl&amp;#39; 7sudo apt install curl 8curl --version 9 10echo &amp;#39;Install git&amp;#39; 11sudo apt-get install git 12git version 13 14echo &amp;#39;Install docker using the convenience script&amp;#39; 15curl -fsSL https://get.docker.com -o get-docker.sh 16sudo sh ./get-docker.sh --dry-run 17 18echo &amp;#39;Install version manger for Node.js&amp;#39; 19curl -fsSL https://raw.githubusercontent.com/tj/n/master/bin/n | bash -s lts 20npm install -g n 21 22echo &amp;#39;Install latest Node.</description>
     </item>
     
     <item>
@@ -23,10 +23,10 @@
       <pubDate>Thu, 27 Oct 2022 21:06:24 +0200</pubDate>
       
       <guid>https://tokariev.github.io/posts/2022-10-27-how-to-deploy-hugo-blog/</guid>
-      <description>Add new post hugo new posts/2022-10-27-How-to-deploy-hugo-blog.md
+      <description>hugo new posts/2022-10-27-How-to-deploy-hugo-blog.md
 content/posts - Where you write and edit your posts&amp;hellip;
-Generate static web site hugo -D
-public folder - This is the folder that you need to deploy.</description>
+hugo -D
+Generate website with posts in the public folder. This is the folder that you need to deploy.</description>
     </item>
     
     <item>

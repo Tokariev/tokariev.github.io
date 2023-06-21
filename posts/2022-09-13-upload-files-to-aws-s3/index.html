@@ -23,7 +23,6 @@ Use the below command to Sync your local directory to your S3 bucket." />
 <meta property="article:published_time" content="2022-09-13T21:49:16+02:00" />
 <meta property="article:modified_time" content="2022-09-13T21:49:16+02:00" />
 
-
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Upload Files to Aws S3"/>
 <meta name="twitter:description" content="Upload single file to S3 bucket 1aws s3 cp sample2.txt s3://test-s3-bucket/data/ Upload all files from a folder to S3 bucket recursively 1aws s3 cp tmp/ s3://test-s3-bucket/data/tmp/ --recursive Using Sync Sync is a command used to synchronize source and target directories. Sync is by default recursive which means all the files and subdirectories in the source will be copied to target recursively.
@@ -220,13 +219,13 @@ Use the below command to Sync your local directory to your S3 bucket."/>
     
     <div class="content" itemprop="articleBody">
       <h2 id="upload-single-file-to-s3-bucket">Upload single file to S3 bucket</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>aws s3 cp sample2.txt s3://test-s3-bucket/data/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>aws s3 cp sample2.txt s3://test-s3-bucket/data/
 </span></span></code></pre></div><h2 id="upload-all-files-from-a-folder-to-s3-bucket-recursively">Upload all files from a folder to S3 bucket recursively</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>aws s3 cp tmp/ s3://test-s3-bucket/data/tmp/ --recursive
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>aws s3 cp tmp/ s3://test-s3-bucket/data/tmp/ --recursive
 </span></span></code></pre></div><h2 id="using-sync">Using Sync</h2>
 <p>Sync is a command used to synchronize source and target directories. Sync is by default recursive which means all the files and subdirectories in the source will be copied to target recursively.</p>
 <p>Use the below command to Sync your local directory to your S3 bucket.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>aws s3 sync your_local_directory s3://full_s3_bucket_name/ --region <span style="color:#f1fa8c">&#34;ap-southeast-2&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>aws s3 sync your_local_directory s3://full_s3_bucket_name/ --region <span style="color:#f1fa8c">&#34;ap-southeast-2&#34;</span>
 </span></span></code></pre></div><p><em><a href="https://www.stackvidhya.com/upload-files-to-aws-s3/">Source</a></em></p>
 
     </div>
@@ -346,7 +345,7 @@ Use the below command to Sync your local directory to your S3 bucket."/>
 
   <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2022  Mykola Tokariev 
+    Copyright  &copy; 2023  Mykola Tokariev 
   </div>
   <div class="footer-right">
     <nav>
